@@ -92,15 +92,24 @@ TEMPLATES = [
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+#DATABASES = {
+    #"default": {
+        #"ENGINE": "django.db.backends.sqlite3",
+        #"NAME": BASE_DIR / "db.sqlite3",
+    #}
+#}
 
+CON_MAX_AGE = config("CONN_MAX_AGE", default=600)
 DATABASES_URL = config("DATABASE_URL", default=None)
 
+if DATABASES_URL is not None:
+    import dj_database_url
+    DATABASES = {
+        "default": dj_database_url.config(
+            default=DATABASES_URL,
+            conn_max_age=CON_MAX_AGE,
+        )
+    }
 
 # For Docker/PostgreSQL usage uncomment this and comment the DATABASES config above
 # DATABASES = {

@@ -2,7 +2,6 @@ from django.views.generic import TemplateView
 from visits.views import PageVisitsView
 from visits.models import PageVisits
 
-from visits.views import PageVisitsView
 
 
 class HomePageView(PageVisitsView):
