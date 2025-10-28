@@ -7,7 +7,8 @@ from visits.models import PageVisits
 
 class HomePageView(PageVisitsView):
 =======
-
+class HomePageView21(TemplateView):      
+    pass
 
 class HomePageView(TemplateView):
 >>>>>>> 67e56f3 (initial commit)
