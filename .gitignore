@@ -14,7 +14,10 @@ media
 # Virtual environment
 .venv
 
+<<<<<<< HEAD
 .env
 
+=======
+>>>>>>> 67e56f3 (initial commit)
 # Screencast
 Lithium_Demo_2025.mp4

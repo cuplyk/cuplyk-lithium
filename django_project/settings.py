@@ -1,6 +1,10 @@
 from pathlib import Path
 from decouple import config
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 67e56f3 (initial commit)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -10,6 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY=config("SECRET_KEY")
 
 # Email config
@@ -26,6 +31,13 @@ MANAGERS = []
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+=======
+SECRET_KEY = config("SECRET_KEY")
+
+# https://docs.djangoproject.com/en/dev/ref/settings/#debug
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = config("DEBUG", default=False, cast=bool)
+>>>>>>> 67e56f3 (initial commit)
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
@@ -51,7 +63,10 @@ INSTALLED_APPS = [
     # Local
     "accounts",
     "pages",
+<<<<<<< HEAD
     "visits",
+=======
+>>>>>>> 67e56f3 (initial commit)
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
@@ -92,6 +107,7 @@ TEMPLATES = [
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
+<<<<<<< HEAD
 #DATABASES = {
     #"default": {
         #"ENGINE": "django.db.backends.sqlite3",
@@ -110,6 +126,14 @@ if DATABASES_URL is not None:
             conn_max_age=CON_MAX_AGE,
         )
     }
+=======
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
+>>>>>>> 67e56f3 (initial commit)
 
 # For Docker/PostgreSQL usage uncomment this and comment the DATABASES config above
 # DATABASES = {
